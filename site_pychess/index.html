@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu échecs Trophées NSI</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/diapo.css" />
+    <script src="./scripts/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <span class="nav-brand">
+          <a href="#" class="nav-link">Jeu échecs Trophées NSI</a>
+        </span>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="#pres" class="nav-link">Notre appli</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#projects" class="nav-link">Avancement</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#pres" class="nav-link">Presentation</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="intro-container">
+          <p class="heading-xl">Bienvenue sur notre site pour le concours trophée NSI de 2022</p>
+          <p class="intro-text">
+            Notre application est une adaptation du jeu d'échecs en python avec une interface graphique tournant gràce à la bibliothèque Pygame.
+          </p>
+          <button class="github"><a href="https://github.com/TheGaspou/PYCHESS/" target="_blank">Retrouver notre github pour découvrire notre code</a></button>
+        </div>
+      </section>
+      <section class="projects" id="projects">
+        <p class="section-heading"> •|Découvrez le devellopement de notre projet|•</p>
+        <div class="projects-container">
+          <div class="projects-grid">
+            <div class="project-card">
+              <p class="card-heading">Voici une sélection d'image pour suivre notre projet</p>
+                <div class="card-text"></div>
+                  <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <img src="assets/1.png" width="960" height="540">
+                        <a style="color:white;">Voici la version finale du jeu.</a>
+                      </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/2.png" width="960" height="540">
+                        <a style="color:white;">Réunion discord pour préparer la vidéo.</a>
+                      </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/5.png" width="960" height="540">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/3.png" width="960" height="540">
+                        <a style="color:white;"> Voila le fameux Github.</a>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/nous.png" width="960" height="540">
+                        <a style="color:white;"> L'équipe de dévellopement le jour du rendue du jeu.
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/piece.png" width="960" height="540">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/6.png" width="960" height="540">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="assets/v1.png" width="960" height="540">
+                        <a style="color:white;">La premier beta du jeu.</a>
+                    </div>
+                  </div>
+                  <br>
+                  <div style="text-align:center">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                  </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pres" id="pres">
+        <p class="section-heading">•|Présentation de notre application|•</p>
+        <div class="pres-container">
+          <div class="pres-image"></div>
+          <div class="text-container">
+            <p class="pres-text">
+             Pychess est un jeu d'échec réalisé avec python avec la librairie Pygame. Nous avons réalisé ce jeu dans le cadre de notre participation au concours "Trophées NSI". Nous avons réalisé ce jeu de A à Z avec Amour pour faire découvir aux jeunes lycéens la spécialité NSI et de ce que nous pouvons faire gràce à notre enseignement.<br><br>Le code de notre application est disponible en libre accès sur github et jouable en le téléchargeant ci-dessous.<br><br> Le jeu est jouable seul ou à deux personnes, en exécutant simplement le jeu. Vous pouvez vaincre vos adversaires et avoir accès à l'historique des coups joué dans un fichier txt.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="download" id="download">
+        <div class="download-container">
+        <p class="section-heading-presentation">Telecharger notre application</p>
+          <p class="intro-text">
+            Notre application est disponible au téléchargement ci-dessous librement et gratuitement.
+            <br>Pour tout soucis contactez nous sur nos discord:
+            <br>- Lukappuccino#3250
+            <br>- clonestriker#1861
+            <br>- Graspou🍔🍟#6879
+              <br><br><a
+                class="card-btn"
+                target="_blank"
+                href="#"
+                >Windows(.exe)</a>
+              <a
+                  class="card-btn"
+                  target="_blank"
+                  href="#"
+                  >MacOS(.app)</a>
+              <a
+                  class="card-btn"
+                  target="_blank"
+                  href="#"
+                  >Linux(.py)</a>
+          </p>
+        </div>
+      </section>
+      <footer>
+        <p>Site réalisé avec le ❤️ à l'occation <a href="https://trophees-nsi.fr">des trophées NSI</a></p>
+      </footer>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // change le temps de diapo (1000 = 1 seconde)
+}
+</script>
+    </main>
+  </body>
+</html>
