@@ -1,6 +1,7 @@
 from piece_pygame import *
 import pygame as pg
 from datetime import datetime
+import sys
 
 #---| Les ressources des images des pions par défaut |----#
 pionB = "../res/pion_noir.png"
@@ -627,8 +628,10 @@ while P.jeu:
                 P.deroulement_tour(mouse)
                 P.dictPieces["roi Noir"].p.Echec(P.tour,P)# ---| Vérifie si l'utilisateur 2 est en échec |----#
                 P.dictPieces["roi Blanc"].p.Echec(P.tour,P)# ---| Vérifie si l'utilisateur 1 est en échec |----#
-
-    P.Fin(P.fin)
+    try:
+        P.Fin(P.fin)
+    except pg.error:
+        sys.exit()
 
 
     echecBlanc = P.dictPieces["roi Blanc"].p.enEchec # ---| initialise au booléen True si échec False sinon |----#
