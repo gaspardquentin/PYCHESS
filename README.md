@@ -1,6 +1,7 @@
 # PYCHESS
 Un jeu d'échec python conçu avec pygame.
 
+![](PYCHESS.png)
 
 ## Requis pour jouer sans installer d'exécutables (si vous installez sur github)
 
