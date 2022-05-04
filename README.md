@@ -21,7 +21,7 @@ Vous avez 2 possibilités pour installer le jeu :
 
 - Télécharger pour Windows (.exe), OSX (.app) et linux :
   
-  - http://pychess.tk
+  - http://pychess.nous-2304.fr
 
 
 
