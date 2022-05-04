@@ -1,0 +1,4 @@
+scripts/Piece.py
+scripts/__pycache__/
+scripts/Plateau.py
+scripts/init.py
