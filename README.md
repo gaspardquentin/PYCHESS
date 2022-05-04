@@ -17,7 +17,7 @@ Vous avez 2 possibilités pour installer le jeu :
 
 -  Télécharger le .zip sur ce github : 
   
-  - Pour jouer il faut alors aller dans TERMINAL(ou CMD/Powershell sur windows) => taper python3 partie.py
+ - Pour jouer il faut alors aller dans TERMINAL(ou CMD/Powershell sur windows) => taper python3 partie.py
 
 - Télécharger pour Windows (.exe), OSX (.app) et linux :
   
