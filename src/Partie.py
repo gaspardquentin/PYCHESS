@@ -183,6 +183,7 @@ class Partie:
     "Permet de gérer de tout le déroulement de la partie en s'aidant de chaque classe correspondant aux pièces"
     def __init__(self):
         # ---| Initialisation des pièce sur le plateau |----#
+        Dame.nombresInstances = 0
         self.dictPieces ={"pion Noir1":SpritePiece(pionB, Pions(1, False, (milieu_case, taille_case+milieu_case)))
                         ,"pion Noir2":SpritePiece(pionB, Pions(2, False, (taille_case+milieu_case, taille_case+milieu_case)))
                         ,"pion Noir3":SpritePiece(pionB, Pions(3, False, (2*taille_case+milieu_case, taille_case+milieu_case)))
