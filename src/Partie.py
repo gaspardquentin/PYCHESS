@@ -331,7 +331,7 @@ class Partie:
 
     def rond(self,centre):
         """Crée un rond aux coordonnées donnée par centre en argument """
-        pg.draw.circle(ecran, (170, 170, 170), centre,30)
+        pg.draw.circle(ecran, (120, 120, 120), centre,30)
 
     def donut(self,centre):
         """Crée un cercle aux coordonnées donnée par centre en argument """
