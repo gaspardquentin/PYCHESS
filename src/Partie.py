@@ -635,8 +635,6 @@ while P.jeu:
         sys.exit()
 
 
-    echecBlanc = P.dictPieces["roi Blanc"].p.enEchec # ---| initialise au booléen True si échec False sinon |----#
-    echecNoir = P.dictPieces["roi Noir"].p.enEchec
 
     for e in P.tableau_case_possibilite:# ---| Permet l'affichage des déplacements possibles de l'utilisateur |----#
         if e != [] and e != None:
