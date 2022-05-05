@@ -640,14 +640,7 @@ while P.jeu:
 
     for e in P.tableau_case_possibilite:# ---| Permet l'affichage des déplacements possibles de l'utilisateur |----#
         if e != [] and e != None:
-            if (P.tour % 2 == 0 and echecNoir):
-                if e in P.dictPieces["roi Noir"].p.solutions:
-                    P.affichage_point([e])
-            elif (P.tour % 2 == 1 and echecBlanc):
-                if e in P.dictPieces["roi Blanc"].p.solutions:
-                    P.affichage_point([e])
-            else:
-                P.affichage_point([e])
+            P.affichage_point([e])
 
     for e in P.tableau_case_mange:# ---| Permet l'affichage des "mangeables" par l'utilisateur |----#
         if e != [] and e != None:
