@@ -213,15 +213,18 @@ class Tour(Pieces):
         pourLeRoiCurieux = []
 
         def verif(x, y):
-            if (partie.getPiece((x, y)) > 0 and self.couleur == "Noir") or (
+            if (partie.getPiece([x, y]) == 6 and self.couleur == "Noir") or (
+                    partie.getPiece([x, y]) == -6 and self.couleur == "Blanc"):
+                 
+                pourLeRoiCurieux.append((y, x))
+                return False
+            
+            elif (partie.getPiece((x, y)) > 0 and self.couleur == "Noir") or (
                     partie.getPiece((x, y)) < 0 and self.couleur == "Blanc"):
                 mangeable.append((x, y))
                 deplacementsPossibles.append((x, y))
                 return False
-            elif (partie.getPiece([x, y]) == 6 and self.couleur == "Noir") or (
-                    partie.getPiece([x, y]) == -6 and self.couleur == "Blanc"):
-                pourLeRoiCurieux.append((y, x))
-                return False
+           
             elif partie.getPiece((x, y)) == 0:
                 deplacementsPossibles.append((x, y))
                 return True
@@ -567,7 +570,7 @@ class Roi(Pieces):
 
             if (e.p.getNomInt() > 0 and self.couleur == "Noir") or (
                     e.p.getNomInt() < 0 and self.couleur == "Blanc") and abs(e.p.getNomInt()) != 6:
-                tousLesDP[cle] = e.p.deplacements_possibles(tour, partie)[2]
+                tousLesDP[cle] = (e.p.getPos(), e.p.deplacements_possibles(tour, partie)[2])
             if (e.p.getNomInt() < 0 and self.couleur == "Noir") or (
                     e.p.getNomInt() > 0 and self.couleur == "Blanc") and abs(e.p.getNomInt()) != 6:
                 solutionsP[cle] = e.p.deplacements_possibles(tour, partie)[0]
@@ -576,15 +579,28 @@ class Roi(Pieces):
                 solutionsP[cle] = e.p.deplacements_possibles(tour, partie)[0]
 
             if (e.p.getNomInt() == -6 and self.couleur == "Blanc") or (e.p.getNomInt() == 6 and self.couleur == "Noir"):
-                tousLesDP[cle] = e.p.deplacements_possibles(tour, partie)[2]
+                tousLesDP[cle] = (e.p.getPos(), e.p.deplacements_possibles(tour, partie)[2])
 
-        vilains = [e for e in tousLesDP.keys() if self.position in tousLesDP[e]]
+        vilains = [e for e in tousLesDP.keys() if self.position in tousLesDP[e][1]]
+        a =  [partie.dictPieces[e] for e in vilains]
+        
+            
+            
         if len(vilains) > 0:
             self.setEnEchec(True)
         if len(vilains) == 0: self.setEnEchec(False)
 
+        dpv = [tousLesDP[e][0] for e in tousLesDP if e in vilains]
 
-        solutions = [e for e in solutionsP.keys() if self.position in solutionsP[e]]
+
+        solutions = []
+        for e in solutionsP.values():
+            for it in e:
+                if it in dpv:
+                    solutions.append(it)
+
+        
+
 
         if len(solutions) == 0 and len(vilains) > 0:
 
@@ -637,10 +653,10 @@ class Roi(Pieces):
 
             if e[0] < 8 * t and e[0] > 0 and e[1] < 8 * t and e[1] >= 0:
                 a = partie.getPiece(e)
-                if not a and not self.enEchec:
+                if not a:
                     deplacementsPossibles.append(e)
                 if a and (a > 0 and self.nomInt < 0) or (a < 0 and self.nomInt > 0):
-                    if not self.enEchec and abs(a) != 6:
+                    if abs(a) != 6:
                         mangeables.append(e)
                         deplacementsPossibles.append(e)
         return deplacementsPossibles, mangeables, []
