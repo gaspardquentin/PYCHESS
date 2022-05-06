@@ -9,8 +9,8 @@ infoecran= pg.display.Info()
 class Pieces:
     """
     Une sorte de classe abstraite, elle sert uniquement de modèle pour l'héritage des autres pièces
-    cette classe créer des objets Pièces ayant comme attributs:
-    -une couleur entre Blanc et Noir
+    Cette classe crée des objets Pièces ayant comme attributs:
+    - une couleur : Blanc ou Noir
     - un nom
     - une position sur l'écran
     - un nom sous forme d'entier -1 1 ... (permet de manipuler plus 'facilement' les pièces que par leur nom).
@@ -65,7 +65,7 @@ class Pions(Pieces):
     
     def __init__(self, numero, estBlanc: bool, position: tuple):
         """
-        Les constructeurs des classes de chaque pièce comme ici le pion appelent le constructeur de la classe abstraite Pieces
+        Les constructeurs des classes de chaque pièce (comme ici le pion) appellent le constructeur de la classe abstraite Pieces
         et ajoute chacun un attribut: le numéro de la pièce.
     
         La variable statique Pions.nombreInstances sert à connaître le nombre de pièces du type demandé présentent sur le plateau, ce qui permet d'éviter des bugs et nous aide dans la conception des algorithmes.
@@ -104,9 +104,9 @@ class Pions(Pieces):
     
         returns
         ---------
-        dp (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        dp (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         ma (list[tuple]): la position de toutes les pièces qui peuvent être mangées
-        pRcR (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
+        pRcR (list[tuple]): la position du roi adverse mangeable si cela est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
         explication de l'algorithme
         ---------
@@ -115,7 +115,7 @@ class Pions(Pieces):
         L'algorithme implémenté fonctionne de la manière suivante:
         
             -- on définit des lambdas (fonctions anonymes sur une seule ligne) représentant d'un côté les déplacements "pacifiques" possibles et d'un autre les déplacements où l'on mange une pièce. Ces lambdas donnent pour chaque position (x, y) une position future potentielle
-            -- ensuite on répete chaque lambdas jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
+            -- ensuite on répete chaque lambda jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
             
         """
         t = self.taille_case
@@ -188,9 +188,9 @@ class Tour(Pieces):
     
         returns
         ---------
-        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         mangeable (list[tuple]): la position de toutes les pièces qui peuvent être mangées
-        pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
+        pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si cela est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
         explication de l'algorithme
         ---------
@@ -199,7 +199,7 @@ class Tour(Pieces):
         L'algorithme implémenté fonctionne de la manière suivante:
         
             -- on définit des lambdas (fonctions anonymes sur une seule ligne) représentant les déplacements possibles d'une case . Ces lambdas donnent pour chaque position (x, y) une position future potentielle.
-            -- ensuite on répete chaque lambdas jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
+            -- ensuite on répete chaque lambda jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
             
         """
         t = self.taille_case
@@ -292,7 +292,7 @@ class Cavalier(Pieces):
     
         returns
         ---------
-        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         mangeable (list[tuple]): la position de toutes les pièces qui peuvent être mangées
         pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
@@ -302,7 +302,7 @@ class Cavalier(Pieces):
         
         L'algorithme implémenté fonctionne de la manière suivante:
             -- Les déplacements possibles du Cavalier étant plutôt simples à définir, on définit tous les cas potentiels directement
-            -- ensuite on tri toutes les possibilités en vérifiant qu'on ne dépasse pas le plateau ou qu'on ne se déplace pas sur une autre pièce, et si il y a une autre pièce adverse, alors on peut la manger.
+            -- ensuite on trie toutes les possibilités en vérifiant qu'on ne dépasse pas le plateau ou qu'on ne se déplace pas sur une autre pièce, et si il y a une autre pièce adverse, alors on peut la manger.
             
             
         """
@@ -379,7 +379,7 @@ class Fou(Pieces):
     
         returns
         ---------
-        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         mangeable (list[tuple]): la position de toutes les pièces qui peuvent être mangées
         pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
@@ -390,7 +390,7 @@ class Fou(Pieces):
         L'algorithme implémenté fonctionne de la manière suivante:
         
             -- on définit des lambdas (fonctions anonymes sur une seule ligne) représentant les déplacements possibles d'une case . Ces lambdas donnent pour chaque position (x, y) une position future potentielle.
-            -- ensuite on répete chaque lambdas jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
+            -- ensuite on répete chaque lambda jusqu'à qu'une contrainte se présente (un obstacle ou la sortie du plateau)
             
         """
         t = self.taille_case
@@ -495,7 +495,7 @@ class Roi(Pieces):
 
     def __init__(self, estBlanc: bool, position: list):
         """
-        Le constructeur de cette classe fonctionne sur le même principe que les autres cependant cette classe possède des attributs supplémentaires unique au roi:
+        Le constructeur de cette classe fonctionne sur le même principe que les autres, mais cette classe possède des attributs supplémentaires uniques au roi:
         - self.quiMetEnEchec (list ou None) : le tableau de toutes les pièces qui mettent en échec le roi.
         - self.enEchec (bool) : un booléen nous informant si le roi est en situation d'échec ou non.
         - self.solutions (list ou None) : le tableau de toutes les pièces qui peuvent sauver le roi de l'échec et donc empêcher le mat.
@@ -540,7 +540,7 @@ class Roi(Pieces):
         
         /!\ Faute de temps, l'algorithme de l'échec est incomplet, il s'agit alors d'une ébauche qui peut détecter l'échec, l'échec et mat mais qui ne permet pas comme convenu initialement d'afficher les déplacements permettant de sauver le roi /!\
         
-        
+
         args
         ---------
         tour (int) : le tour actuel de la partie
@@ -621,7 +621,7 @@ class Roi(Pieces):
     
         returns
         ---------
-        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         mangeable (list[tuple]): la position de toutes les pièces qui peuvent être mangées
         pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
@@ -700,7 +700,7 @@ class Dame(Pieces):
     
         returns
         ---------
-        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi inmangeable)
+        deplacementsPossibles (list[tuple]) : la position de tous les déplacements possibles sauf le roi (roi immangeable)
         mangeable (list[tuple]): la position de toutes les pièces qui peuvent être mangées
         pourLeRoiCurieux (list[tuple]): la position du roi adverse mangeable si celà est possible => ne sert à rien dans la version rendue pour le concours des trophées NSI puisque l'algorithme de calcul des déplacements possibles dans le cas où le roi est en échec n'a pas été produit.
         
