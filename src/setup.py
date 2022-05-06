@@ -1,5 +1,9 @@
 """
-Ce fichier permet de créer des executables pour tous les sytemes.
+Ce fichier permet de créer des exécutables pour tous les sytèmes.
+Sont actuellement supportés :
+- Windows (via un exécutable .exe)
+- MacOSX (via un exécutable .app)
+- Linux (via l'exécution simple d'un fichier python, avec la commande utilitaire "python"
 
 """
 
