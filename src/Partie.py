@@ -354,7 +354,7 @@ class Partie:
             self.group.add(e)
 
     def ScreenToCase(self, s):
-        """Transforme une position en pixel en  une position du jeu d'échec """
+        """Transforme une position en pixel en une position du jeu d'échec """
         a = "abcdefgh"
         b = "87654321"
         for i in range(len(self.tabplateaumilieu)):
@@ -449,7 +449,7 @@ class Partie:
 
 
     def deroulement_tour(self,mouse):
-        """Execute tout le déroulement d'un tour en prenant en argument la position du clic de la souris (mouse) """
+        """Exécute tout le déroulement d'un tour en prenant en argument la position du clic de la souris (mouse) """
         case = self.trouver_case(mouse)
         self.dictPieces = self.Pions_changement()
         self.group = pg.sprite.Group()

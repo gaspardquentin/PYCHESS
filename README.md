@@ -1,5 +1,5 @@
 # PYCHESS
-Un jeu d'échec python conçu avec pygame.
+Un jeu d'échecs en Python conçu avec Pygame.
 
 ![](PYCHESS.png)
 
@@ -15,7 +15,7 @@ Un jeu d'échec python conçu avec pygame.
 
 Vous avez 2 possibilités pour installer le jeu :
 
--  Télécharger le .zip sur ce github : 
+-  Télécharger le .zip sur ce Github : 
   
     - Pour jouer il faut alors aller dans TERMINAL(ou CMD/Powershell sur windows) => taper python3 partie.py
 
@@ -27,7 +27,7 @@ Vous avez 2 possibilités pour installer le jeu :
 
 
 
-Fait avec amour par Gaspard Quentin, Luka Equoy et Simon Bach dans le cadre du concours des trophées de NSI édition 2022.
+Fait avec amour par Gaspard Quentin, Luka Equoy et Simon Bach dans le cadre du concours des trophées NSI édition 2022.
 
 
 😃
