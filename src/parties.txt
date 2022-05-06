@@ -1,6 +1,6 @@
 PYCHESS
 -------
 
-Toutes vos parties jouées vont être décrite ici !
+Toutes vos parties jouées seront décrites ici !
 
 -------
